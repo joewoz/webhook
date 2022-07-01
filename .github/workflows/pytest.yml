@@ -21,4 +21,9 @@ jobs:
       run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
     - run: pipenv install
     - name: Run Tests
-      run: pipenv run pytest --cov
+      run: pipenv run pytest --cov --cov-report xml
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: "coverage.xml"
