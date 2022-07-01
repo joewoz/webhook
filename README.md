@@ -11,15 +11,15 @@ wh = webhook.WebHook(URL, webhook.Discord)
 wh.send("TESTING", "Testing Discord...", "n/a")
 ```
 1. Import the webhook module
-2. Create an instance of the WebHook class
-    a. Specify the webhook URL
+2. Create an instance of the WebHook class  
+    a. Specify the webhook URL  
     b. Sepcify the format by calling the specific format class, in this case Discord
 
 
 ## Testing using mock web post function
 To test the send function without actually sending the message, simply specify a different post function.
 
-In the following example, we use the built-in mock_post_fn to do this
+In the following example, we use the built-in `mock_post_fn` to do this
 ```python
 wh = webhook.WebHook(URL, webhook.Discord, post_funct=webhook.mock_post_fn)
 ```
