@@ -21,4 +21,4 @@ jobs:
       run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
     - run: pipenv install
     - name: Run Tests
-      run: pytest --cov
+      run: pipenv run pytest --cov
